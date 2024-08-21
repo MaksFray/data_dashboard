@@ -12,16 +12,16 @@ if uploaded_file:
     st.subheader("Data preview")
     st.write(df.head())
 
-    st.subheader('Data summary')
+    st.subheader("Data summary")
     st.write(df.describe())
 
     st.subheader("Filter data")
     columns = df.columns.tolist()
     selected_column = st.selectbox("Select column to filter by", columns)
-    uniaue_values = df[selected_column].unique()
-    selevted_value = st.selectbox("Select value", uniaue_values)
+    unique_values = df[selected_column].unique()
+    selected_value = st.selectbox("Select value", unique_values)
 
-    filtered_df = df[df[selected_column] == selevted_value]
+    filtered_df = df[df[selected_column] == selected_value]
     st.write(filtered_df)
 
     st.subheader("Plot data")
